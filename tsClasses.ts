@@ -35,4 +35,38 @@ class Manus extends PersonDetails {
 console.log(Manus);
 console.log(new Manus("Manus", "manoose47"));
 
+class Plant{
+    private _species: string = "";
 
+    // getters and setters are similar
+    get species() {
+        return this._species;        
+    }
+
+    set species(value:string) {
+        if(value.length > 3)
+        {
+            this._species = value;
+        }
+        else{
+            this._species = "Default";
+        }
+    }
+}
+
+let plant = new Plant()
+plant.species ="Green Plant";
+console.log(plant.species);
+
+class Helper {
+    static pi: number = 3.14;
+    
+    static CalcDiameter(diameter: number) : number{
+        return Helper.pi * diameter;
+    }
+}
+
+// static methods can be accessed from anywhere, even from outside this helper class, one can reference Helper.pi
+// or Helper.CalcDiameter(10);
+
+console.log(Helper.CalcDiameter(100));

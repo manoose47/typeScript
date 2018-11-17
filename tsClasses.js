@@ -42,4 +42,28 @@ var Manus = /** @class */ (function (_super) {
 }(PersonDetails));
 console.log(Manus);
 console.log(new Manus("Manus", "manoose47"));
+var Plant = /** @class */ (function () {
+    function Plant() {
+        this._species = "";
+    }
+    Object.defineProperty(Plant.prototype, "species", {
+        get: function () {
+            return this._species;
+        },
+        set: function (value) {
+            if (value.length > 3) {
+                this._species = value;
+            }
+            else {
+                this._species = "Default";
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Plant;
+}());
+var plant = new Plant();
+plant.species = "Green Plant";
+console.log(plant.species);
 //# sourceMappingURL=tsClasses.js.map
