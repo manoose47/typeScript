@@ -47,6 +47,7 @@ var Plant = /** @class */ (function () {
         this._species = "";
     }
     Object.defineProperty(Plant.prototype, "species", {
+        // getters and setters are similar
         get: function () {
             return this._species;
         },
@@ -66,4 +67,16 @@ var Plant = /** @class */ (function () {
 var plant = new Plant();
 plant.species = "Green Plant";
 console.log(plant.species);
+var Helper = /** @class */ (function () {
+    function Helper() {
+    }
+    Helper.CalcDiameter = function (diameter) {
+        return Helper.pi * diameter;
+    };
+    Helper.pi = 3.14;
+    return Helper;
+}());
+// static methods can be accessed from anywhere, even from outside this helper class, one can reference Helper.pi
+// or Helper.CalcDiameter(10);
+console.log(Helper.CalcDiameter(100));
 //# sourceMappingURL=tsClasses.js.map
