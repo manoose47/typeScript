@@ -70,3 +70,7 @@ class Helper {
 // or Helper.CalcDiameter(10);
 
 console.log(Helper.CalcDiameter(100));
+
+//namespaces are kind of jank in Ts, It looks like Modules are a much better option.
+
+import {} from './Math/circle';
