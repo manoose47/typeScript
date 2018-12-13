@@ -21,7 +21,7 @@ console.log(myself);
 console.log("Arrow functions boiii")
 
 // simple Multiply
-let multiply = (num1: number, num2: number) => {
+let multiply = (num1: number, num2: number) : number => {
     return num1 * num2;
     }
 

@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.4.0"
+    "lite-server": "^2.4.0",
+    "webpack": "^4.27.1"
   },
   "dependencies": {
     "systemjs": "^2.1.1"
