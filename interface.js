@@ -24,5 +24,15 @@ var NoTouchy;
     var Ricardo = new person("Ricardo", "Chavez", 34, new Date('1987-11-12T01:11:00'));
     console.log(Ricardo.WhatAge());
     Greet(Ricardo);
+    var multiply;
+    multiply = function (num1, num2) {
+        return num1 * num2;
+    };
+    var divide;
+    divide = function (num1, num2) {
+        return num1 / num2;
+    };
+    console.log(multiply(2, 8));
+    console.log(divide(9, 3));
 })(NoTouchy || (NoTouchy = {}));
 //# sourceMappingURL=interface.js.map

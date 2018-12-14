@@ -42,4 +42,34 @@ namespace NoTouchy {
     console.log(Ricardo.WhatAge());
 
     Greet(Ricardo);
+
+
+    
+    // we can also create interfaces for setting specific function signatures:
+
+    interface MultiSum{
+        (num1: number, num2: number) : number
+    }
+
+    let multiply : MultiSum;
+    multiply = function(num1: number, num2:number)
+    {
+        return num1 * num2;
+    }
+
+    let divide : MultiSum;
+    divide = function(num1: number, num2:number)
+    { 
+        return num1/num2;
+    }
+
+    console.log(multiply(2,8));
+    console.log(divide(9,3));
+
+    // lastly we can use inheritance to link interfaces together:
+
+    interface Cyborg extends PersonTemplate{
+        serialNumber : number;
+        killswitch: boolean;
+    }
 }
