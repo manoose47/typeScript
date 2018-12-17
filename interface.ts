@@ -72,4 +72,22 @@ namespace NoTouchy {
         serialNumber : number;
         killswitch: boolean;
     }
+
+    // Implementation of Cyborg will require all the fields and functions of PersonTemplate, plus its own fields to instantiate
+
+    
+    const roboCardo : Cyborg = {
+        firstName: "Ricardo",
+        lastName: "McRobot",
+        age: 200,
+        serialNumber:102302230,
+        killswitch:false,
+
+        WhatAge()
+        {
+            return  `${this.firstName} the cyborg is ${this.age} years old`;
+        }
+    };
+
+    console.log(roboCardo.WhatAge());
 }
