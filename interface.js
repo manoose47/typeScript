@@ -34,5 +34,17 @@ var NoTouchy;
     };
     console.log(multiply(2, 8));
     console.log(divide(9, 3));
+    // Implementation of Cyborg will require all the fields and functions of PersonTemplate, plus its own fields to instantiate
+    var roboCardo = {
+        firstName: "Ricardo",
+        lastName: "McRobot",
+        age: 200,
+        serialNumber: 102302230,
+        killswitch: false,
+        WhatAge: function () {
+            return this.firstName + " the cyborg is " + this.age + " years old";
+        }
+    };
+    console.log(roboCardo.WhatAge());
 })(NoTouchy || (NoTouchy = {}));
 //# sourceMappingURL=interface.js.map

@@ -11,6 +11,6 @@ return data;
 // so in this instance, the intellisence recognises that horse is a string and adding the . provides intellisense with the available string based methods
 console.log(Echo("horse").length);
 
-console.log(Echo(234).valueOf);
+console.log(Echo(234));
 
 console.log(Echo({firstname: "Jimmy", age: 23}))
