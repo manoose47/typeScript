@@ -28,7 +28,7 @@ Jimmy.call();
 
 function noChoiceMcDec(ctor: Function)
 {
-    ctor.prototype.add = function showAllDetails(){
+    ctor.prototype.showAllDetails = function() {
         console.log(this);
     }
 }
@@ -41,3 +41,31 @@ class privatePerson {
 }
 
 let Fred = new privatePerson();
+//Interstingly, typescript doesn't recognise that the showAllDetails method of the decorator 
+//is now a part of the new class, so we need to cast the class with the any type
+//Fred.showAllDetails()  -- will error
+(<any>Fred).showAllDetails();
+
+
+// Now were using a decorator, based on whether a condition is met. So we refer to the boolMcDec decorator through the Doctor boolean function 
+function boolMcDec(ctor: Function)
+{
+    ctor.prototype.areYouDiseased = "Bad news!"
+}
+
+// needed to disable stict null checks in tsconfig to fix this. This seems hacky as fuck
+function Doctor(value: boolean) {
+    return value ?  boolMcDec : null;
+}
+
+@Doctor(true)
+class AverageJoe
+{
+    name: string = "Joe";
+    build: string = "average";
+}
+
+
+//bad news joe
+const joe = new AverageJoe();
+console.log((<any>joe).areYouDiseased)

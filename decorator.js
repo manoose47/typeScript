@@ -1,4 +1,3 @@
-"use strict";
 //A decorator is a normal function, right up until the @ sign is used to invoke it
 //decorators act as functions that take a single argument: a class constructor:
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -28,7 +27,7 @@ var Jimmy = new Bro("jimmy");
 Jimmy.call();
 // Decorators can be used to hijack classes and add properties & fields to the class
 function noChoiceMcDec(ctor) {
-    ctor.prototype.add = function showAllDetails() {
+    ctor.prototype.showAllDetails = function () {
         console.log(this);
     };
 }
@@ -44,4 +43,28 @@ var privatePerson = /** @class */ (function () {
     return privatePerson;
 }());
 var Fred = new privatePerson();
+//Interstingly, typescript doesn't recognise that the showAllDetails method of the decorator 
+//is now a part of the new class, so we need to cast the class with the any type
+//Fred.showAllDetails()  -- will error
+Fred.showAllDetails();
+// Now were using a decorator, based on whether a condition is met. So we refer to the boolMcDec decorator through the Doctor boolean function 
+function boolMcDec(ctor) {
+    ctor.prototype.areYouDiseased = "Bad news!";
+}
+// needed to disable stict null checks in tsconfig to fix this. This seems hacky as fuck
+function Doctor(value) {
+    return value ? boolMcDec : null;
+}
+var AverageJoe = /** @class */ (function () {
+    function AverageJoe() {
+        this.name = "Joe";
+        this.build = "average";
+    }
+    AverageJoe = __decorate([
+        Doctor(true)
+    ], AverageJoe);
+    return AverageJoe;
+}());
+var joe = new AverageJoe();
+console.log(joe.areYouDiseased);
 //# sourceMappingURL=decorator.js.map

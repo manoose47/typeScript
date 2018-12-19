@@ -1,4 +1,3 @@
-"use strict";
 // Exercise 1 - Maybe use an Arrow Function?
 var double = function (value) {
     return value * 2;

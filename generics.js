@@ -1,4 +1,3 @@
-"use strict";
 // Generic functions
 // This Generic function is indicated by the <T> declaration before the parameter in the method signature,
 // This function takes a generic param of type t and returns a value of type t

@@ -1,4 +1,3 @@
-"use strict";
 var NoTouchy;
 (function (NoTouchy) {
     // anything that implements PersonTemplate can be passed into this function    

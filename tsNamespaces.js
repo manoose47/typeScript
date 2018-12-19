@@ -1,4 +1,3 @@
-"use strict";
 var Horses;
 (function (Horses) {
     var Horse = /** @class */ (function () {

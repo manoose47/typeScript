@@ -1,4 +1,3 @@
-"use strict";
 // generic class - Type t can be a number or string only
 var MyMap = /** @class */ (function () {
     function MyMap() {
